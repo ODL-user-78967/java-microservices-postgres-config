@@ -1,5 +1,4 @@
 # COMMON APPLICATION PROPERTIES
-
 # embedded database init, supports mysql too trough the 'mysql' spring profile
 spring:
 datasource:
@@ -23,9 +22,29 @@ cloud:
 jpa:
    open-in-view: false
    hibernate:
-      ddl-auto: none
+      ddl-auto: update
    properties:
       hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+# Enable detailed logging for SQL, Hibernate, and JDBC
+logging:
+  level:
+    org.springframework: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.jdbc.core: DEBUG
+    org.springframework.transaction: DEBUG
+    com.zaxxer.hikari: DEBUG  # For database connection pooling
+
+# Enable Spring Boot startup logs
+logging:
+  level:
+    org.springframework.boot: TRACE
+
+# Enable logs for SQL schema and data initialization
+logging:
+  level:
+    org.springframework.jdbc.datasource.init.ScriptUtils: DEBUG
+
 
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
@@ -36,8 +55,6 @@ management.endpoints.web.exposure.include: "*"
 # Waiting issue https://github.com/spring-projects/spring-boot/issues/13042
 spring.cloud.refresh.refreshable: false
 
-# Logging
-logging.level.org.springframework: DEBUG
 
 # enable health probes
 management.health.livenessState.enabled: true
