@@ -3,7 +3,7 @@
 # embedded database init, supports mysql too trough the 'mysql' spring profile
 spring:
   datasource:
-    url: jdbc:postgresql://mysql-petclinic-9a88a1.postgres.database.azure.com:5432/petclinic?useSSL=true
+    url: jdbc:postgresql://mysql-petclinic-9a88a1.postgres.database.azure.com:5432/petclinic?sslmode=require
     username: myadmin
     password: admin@123
   sql:
