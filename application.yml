@@ -35,7 +35,10 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
+    properties:
+       hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
 
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
@@ -47,7 +50,10 @@ management.endpoints.web.exposure.include: "*"
 spring.cloud.refresh.refreshable: false
 
 # Logging
-logging.level.org.springframework: DEBUG
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
 
 # enable health probes
 management.health.livenessState.enabled: true
