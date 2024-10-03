@@ -53,6 +53,7 @@ logging:
     org.springframework: INFO
     org.hibernate.SQL: DEBUG
     org.springframework.jdbc.core: DEBUG
+    org.springframework.orm.jpa: DEBUG
 
 # enable health probes
 management.health.livenessState.enabled: true
