@@ -10,7 +10,7 @@ spring:
     init:
       schema-locations: classpath*:db/postgres/schema.sql
       data-locations: classpath*:db/postgres/data.sql
-      mode: always
+      mode: ALWAYS
   jms:
     queue:
       visits-requests: visits-requests
@@ -48,12 +48,7 @@ management.endpoints.web.exposure.include: "*"
 spring.cloud.refresh.refreshable: false
 
 # Logging
-logging:
-  level:
-    org.springframework: INFO
-    org.hibernate.SQL: DEBUG
-    org.springframework.jdbc.core: DEBUG
-    org.springframework.orm.jpa: DEBUG
+logging.level.org.springframework: INFO
 
 # enable health probes
 management.health.livenessState.enabled: true
