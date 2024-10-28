@@ -8,8 +8,8 @@ spring:
     password: admin@123
   sql:
     init:
-      schema-locations: classpath*:db/postgres/schema.sql
-      data-locations: classpath*:db/postgres/data.sql
+      schema-locations: classpath:db/postgres/schema.sql
+      data-locations: classpath:db/postgres/data.sql
       mode: ALWAYS
   jms:
     queue:
