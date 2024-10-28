@@ -36,7 +36,6 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: none
-    show-sql: true
 
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
@@ -51,9 +50,9 @@ spring.cloud.refresh.refreshable: false
 logging.level.org.springframework: DEBUG
 
 # enable health probes
-management.health.livenessState.enabled: true
-management.health.readinessState.enabled: true
-management.endpoint.health.probes.enabled: true
+management.health.livenessState.enabled: false
+management.health.readinessState.enabled: false
+management.endpoint.health.probes.enabled: false
 
 # Metrics
 management:
